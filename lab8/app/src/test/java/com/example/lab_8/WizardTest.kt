@@ -44,6 +44,21 @@ class WizardTest {
     @Test
     fun restoreMana_amountAddedLessThanOrEqualToOneHundred_ManaIncreasesCorrectly() {
         evilWizard.restoreMana(40)
-        assertEquals(80, evilWizard.mana)
+        assertEquals(70, evilWizard.mana)
+    }
+
+    @Test
+    fun train_SufficientMana_TrainsCorrectly() {
+        evilWizard.train()
+        assertEquals(25, evilWizard.mana)
+        assertEquals(11, evilWizard.spellPower)
+    }
+
+    @Test
+    fun train_InsufficientMana_NothingOccurs() {
+        evilWizard.mana = 3
+        evilWizard.train()
+        assertEquals(3, evilWizard.mana)
+        assertEquals(10, evilWizard.spellPower)
     }
 }
