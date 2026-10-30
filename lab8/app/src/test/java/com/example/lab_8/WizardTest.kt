@@ -14,6 +14,8 @@ class WizardTest {
         evilWizard = Wizard("Evil Wizard", 30, 10)
     }
 
+    // Some dummy documentation for a test!
+    // so I can commit
     @Test
     fun castSpell_explosion_successful() {
         val damageDealt = evilWizard.castSpell("Explosion")
